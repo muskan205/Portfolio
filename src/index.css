@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Global colors */
+  --color-primary: #2563eb;
+  --color-secondary: #9333ea;
+  --color-accent: #f59e0b;
+  --color-background: #f8fafc;
+  --color-text: #1e293b;
+
+  /* Global fonts */
+  --font-body: "Inter", sans-serif;
+}
+
+:root {
+  font-family: var(--font-body);
+  color-scheme: dark;
+  --page: #0c1220;
+  --surface: #101a2b;
+  --card: #142137;
+  --text: #f4f6ff;
+  --muted: #b7c0d4;
+  --line: #25344b;
+  --accent: #a78bfa;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page: #f7f8fc;
+  --surface: #eef1f8;
+  --card: #ffffff;
+  --text: #1b2435;
+  --muted: #586579;
+  --line: #e0e5ef;
+  --accent: #7c3aed;
+}
+
+:root[data-theme="light"] #skills article {
+  box-shadow: 0 12px 32px rgb(30 41 59 / 0.05);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+.app-shell {
+  background: var(--page);
+  color: var(--text);
+}
+
+::selection {
+  background: #c4b5fd;
+  color: #1e1b4b;
+}
+/* Typewriter effect applies only to the title, not the entire hero layout. */
+.typewriter {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  border-right: 0.15em solid #a855f7;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+  animation: typing 3.5s steps(21, end) both, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 21ch; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #a855f7; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter {
+    max-width: 100%;
+    animation: none;
+    border-right: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
